@@ -1,70 +1,101 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+
+# 👓 Lumina Vision: El Futuro de la Visión
+
+### *Una experiencia 3D inmersiva que narra la evolución de las gafas desde 1286 hasta el futuro de la realidad aumentada*
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://smart-glasses-landing-threejs-gsap.vercel.app)
+[![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
+[![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=black)](https://greensock.com/gsap/)
+
+![Lumina Vision Preview](./preview.png)
+
+[**Ver Demo en Vivo →**](https://smart-glasses-landing-threejs-gsap.vercel.app)
+
 </div>
 
-# Lumina Vision AR - Landing Page
+---
 
-Una experiencia web inmersiva en 3D que muestra la evolución de la visión humana y el futuro de las gafas inteligentes de realidad aumentada (AR).
+## ✨ Sobre el Proyecto
 
-**Ver Demo en AI Studio:** [https://ai.studio/apps/drive/1naAuiZWdpDTi3n24SHd6abl5_HuAwWdm](https://ai.studio/apps/drive/1naAuiZWdpDTi3n24SHd6abl5_HuAwWdm)
+**Lumina Vision** es una landing page interactiva que combina storytelling visual con tecnología 3D de vanguardia. A través de un scroll cinematográfico, los usuarios viajan desde la invención de la "Piedra de Lectura" en el año 1200 d.C., pasando por los bifocales de Benjamin Franklin, hasta llegar a las gafas inteligentes del futuro con IA integrada.
 
-## 🚀 Tecnologías
+### 🎯 Características Principales
 
-Este proyecto utiliza un stack moderno para gráficos web de alto rendimiento:
+- 🎬 **Narrativa Scroll-Driven**: Animaciones GSAP sincronizadas con el scroll
+- 🕶️ **Modelo 3D Interactivo**: Gafas renderizadas con React Three Fiber
+- 🎨 **HUD Dinámico**: Interfaz futurista que cambia según la época
+- ⚡ **Optimización Automática**: Ajuste de calidad según el rendimiento del dispositivo
+- �️ **Solo Desktop**: Experiencia optimizada para pantallas grandes
 
-*   **React 19**: Biblioteca de UI.
-*   **Vite**: Entorno de desarrollo ultrarrápido.
-*   **React Three Fiber (R3F)**: Renderizado 3D declarativo para React.
-*   **GSAP (GreenSock)**: Animaciones de scroll complejas y líneas de tiempo.
-*   **Tailwind CSS**: Estilizado rápido y responsivo.
-*   **Lucide React**: Iconografía.
+---
 
-## 🛠️ Instalación y Ejecución Local
+## 🛠️ Stack Tecnológico
 
-**Requisitos Previos:** Node.js instalado.
+| Tecnología | Propósito |
+|------------|-----------|
+| **React 19** | Framework UI moderno |
+| **Vite** | Build tool ultrarrápido |
+| **React Three Fiber** | Renderizado 3D declarativo |
+| **@react-three/drei** | Helpers para R3F |
+| **GSAP + ScrollTrigger** | Animaciones complejas |
+| **Tailwind CSS** | Estilizado responsivo |
+| **TypeScript** | Type safety |
 
-1.  **Instalar dependencias:**
-    ```bash
-    npm install
-    ```
+---
 
-2.  **Configurar variables de entorno (Opcional):**
-    Crea un archivo `.env.local` si necesitas configurar claves de API (por ejemplo, para funciones de IA generativa si se implementan).
-    ```env
-    GEMINI_API_KEY=tu_api_key_aqui
-    ```
 
-3.  **Ejecutar el servidor de desarrollo:**
-    ```bash
-    npm run dev
-    ```
-    La aplicación estará disponible en `http://localhost:3000` (o el puerto que indique la consola).
 
 ## 📂 Estructura del Proyecto
-
-El proyecto ha sido refactorizado para seguir las mejores prácticas de arquitectura en React y R3F:
 
 ```
 src/
 ├── components/
-│   ├── scene/       # Componentes 3D (Experiencia, Modelos)
-│   ├── ui/          # Componentes de Interfaz 2D (NavRail, Capas)
-│   ├── HUD.tsx      # Interfaz Heads-Up Display
-│   └── GlassesModel.tsx # Modelo 3D de las gafas
-├── data/            # Datos estáticos (Textos, Imágenes)
-├── hooks/           # Hooks personalizados (Animaciones, Lógica)
-├── types.ts         # Definiciones de tipos TypeScript
-├── App.tsx          # Componente principal y composición
-└── index.tsx        # Punto de entrada
+│   ├── scene/              # Componentes 3D
+│   │   └── Experience.tsx  # Orquestador de la escena 3D
+│   ├── ui/                 # Componentes de interfaz
+│   │   ├── NavRail.tsx     # Navegación lateral
+│   │   ├── BackgroundLayer.tsx
+│   │   ├── ContentLayer.tsx
+│   │   └── MobileBlocker.tsx
+│   ├── HUD.tsx             # Heads-Up Display
+│   └── GlassesModel.tsx    # Modelo 3D de las gafas
+├── data/
+│   └── scenes.ts           # Contenido y configuración de escenas
+├── hooks/
+│   └── useSceneAnimation.ts # Lógica de animaciones GSAP
+├── types.ts                # Definiciones TypeScript
+└── App.tsx                 # Componente raíz
 ```
 
-## ✨ Características Clave
 
-*   **Narrativa Scroll-Driven**: La historia avanza a medida que el usuario hace scroll, viajando desde el año 1200 d.C. hasta el futuro.
-*   **Modelo 3D Interactivo**: Las gafas reaccionan al scroll, cambiando de posición y rotación suavemente.
-*   **HUD Dinámico**: La interfaz superpuesta cambia según la "época" (ej. bifocales en 1780, escáner AI en el presente).
-*   **Optimización de Rendimiento**: Uso de `PerformanceMonitor` para ajustar la calidad gráfica dinámicamente según el dispositivo.
+
+## 📸 Screenshots
+
+<div align="center">
+
+### Hero Section
+![Hero](./preview.png)
+
+*Experiencia inmersiva con modelo 3D interactivo*
+
+</div>
 
 ---
 
-Desarrollado con ❤️ por [Tu Nombre/Usuario]
+## 👨‍💻 Autor
+
+**Angel Arrieta** - [@anuidev8](https://github.com/anuidev8)
+
+---
+
+<div align="center">
+
+### 🌟 Si te gustó el proyecto, dale una estrella!
+
+[![GitHub stars](https://img.shields.io/github/stars/anuidev8/smart-glasses-landing-threejs-gsap?style=social)](https://github.com/anuidev8/smart-glasses-landing-threejs-gsap)
+
+**[Ver Demo en Vivo →](https://smart-glasses-landing-threejs-gsap.vercel.app)**
+
+</div>
